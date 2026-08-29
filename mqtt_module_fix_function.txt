@@ -1,9 +1,0 @@
-def on_message(client, userdata, msg):
-    payload = msg.payload.decode('utf-8')
-    
-    # พิมพ์ Log ทุกข้อความที่รับมาได้ เพื่อให้เราเห็นว่าบอร์ดส่งอะไรมาบ้าง
-    logger.info(f"received '{payload}' from '{msg.topic}'")
-    
-    # กรองเอาเฉพาะข้อความที่มีคำว่า "Detect" ถึงจะเก็บลง List (ข้าม ESP32 connected ไป)
-    if "Detect" in payload:
-        vars.sub_msg.append(payload)
